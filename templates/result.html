@@ -1,0 +1,108 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+{% load static %}
+<link href="{% static 'css/style.css' %}" rel="stylesheet" type="text/css"/>
+<title>Bmi App</title>
+
+{% include "navbar.html" %}
+
+<h5 style="text-align: center;font-size: 30px;font-weight: 400;margin-top: 20px;margin-bottom: 20px;color: rgba(11, 161, 129, 0.968);letter-spacing: 3px;">YOUR BMI RESULT</h5>
+
+
+
+
+
+
+
+
+
+
+
+  <div class="result-container">
+            <h5 style="font-size: 30px;font-weight: 400;text-align: center;color:rgb(86, 119, 112)">Your Bmi : {{bmi}} (Kg/m^2)</h5>
+  
+      
+            <h4 style="font-size: 25px;font-weight: 600;text-align: center;color:rgb(135, 131, 150);margin-top: 10px;">({{message}})</h4>
+
+
+               
+            
+  
+  
+  
+  
+          
+            <hr/>
+  
+            <a class="btn btn-secondary outline" style="padding: 20px;margin-bottom: 10px;" href="{% url 'home' %}">  <---  BACK TO HOME </a>
+            
+  
+
+ 
+            
+
+</div><br/>
+
+<h5 style="text-align: center;font-size: 30px;font-weight: 400;margin-top: 10px;margin-bottom: 30px;color: rgba(11, 161, 129, 0.968);letter-spacing: 3px;">VIEW BMI STATS</h5>
+
+<div style="width:80%;margin-left:auto;margin-right:auto;margin-bottom: 40px;">
+  <ul class="list-group" style="background-color:rgba(5, 126, 118, 0.918)">
+    <li class="list-group-item d-flex justify-content-between align-items-center">
+      Total Customers Who Checked Thier Bmi 
+      <span class="badge badge-secondary badge-pill">{{total}}</span>
+    </li>
+    <li class="list-group-item d-flex justify-content-between align-items-center">
+      Total Male Customers Who Checked Thier Bmi 
+      <span class="badge badge-secondary badge-pill">{{M}}</span>
+    </li>
+    <li class="list-group-item d-flex justify-content-between align-items-center">
+      Total Female Customers Who Checked Thier Bmi 
+      <span class="badge badge-secondary badge-pill">{{F}}</span>
+    </li>
+    <li class="list-group-item d-flex justify-content-between align-items-center">
+      Total Customers Who are in Under Weight Range
+      <span class="badge badge-secondary badge-pill">{{underweight}}</span>
+    </li>
+    <li class="list-group-item d-flex justify-content-between align-items-center">
+      Total Customers who are in Normal Weight Range
+      <span class="badge badge-secondary badge-pill">{{normal}}</span>
+    </li>
+    <li class="list-group-item d-flex justify-content-between align-items-center">
+      Total Customers who are in Pre Obesity  Range
+      <span class="badge badge-secondary badge-pill">{{preobesity}}</span>
+    </li>
+    <li class="list-group-item d-flex justify-content-between align-items-center">
+      Total Customers Who are in Moderate Risk Obesity  Range
+      <span class="badge badge-secondary badge-pill">{{moderateobesity}}</span>
+    </li>
+    <li class="list-group-item d-flex justify-content-between align-items-center">
+      Total Customers Who are in High Risk Obesity  Range
+      <span class="badge badge-secondary badge-pill">{{highobesity}}</span>
+    </li>
+    <li class="list-group-item d-flex justify-content-between align-items-center">
+      Total Customers Who are in Low Risk Obesity  Range
+      <span class="badge badge-secondary badge-pill">{{lowobesity}}</span>
+    </li>
+
+  </ul>
+
+</div>
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+

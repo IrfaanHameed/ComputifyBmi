@@ -11,38 +11,31 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 from pathlib import Path,os
-import django_heroku
+import os
+from dotenv import load_dotenv
+
+
 
 Template_Dir = os.path.join("templates")
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-
+load_dotenv(os.path.join(BASE_DIR,".env"))
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-gc73r=5u+2vh3en-ywg7o96a64=7n@_e=wqdn$xmwft9683c-c'
+SECRET_KEY = os.environ.get('SECRET_KEY')
+#print("SECRET KEY : ",SECRET_KEY)
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
-import json
-import os
-from django.core.exceptions import ImproperlyConfigured
 
-with open(os.path.join(BASE_DIR, 'secrets.json')) as secrets_file:
-    secrets = json.load(secrets_file)
 
-def get_secret(setting, secrets=secrets):
-    """Get secret setting or fail with ImproperlyConfigured"""
-    try:
-        return secrets[setting]
-    except KeyError:
-        raise ImproperlyConfigured("Set the {} setting".format(setting))
 
 
 # Application definition
@@ -94,12 +87,15 @@ WSGI_APPLICATION = 'Bmi_Project.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'BMI',
-        'USER':'postgres',
-        'PASSWORD':get_secret("DB_PASSWORD"),
-        'HOST':'localhost',
+        'NAME':os.environ.get('NAME'),
+        'USER':os.environ.get('USER'),
+        'HOST':os.environ.get('HOST'),
+        'PASSWORD':os.environ.get('PASSWORD'),
+        'PORT':os.environ.get('PORT'),
     }
 }
+
+
 
 
 # Password validation
@@ -153,4 +149,4 @@ APPEND_SLASH=True
 
 
 
-django_heroku.settings(locals())
+

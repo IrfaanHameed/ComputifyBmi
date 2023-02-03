@@ -1,0 +1,1 @@
+web:  gunicorn  Bmi_Project.wsgi 

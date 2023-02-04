@@ -38,7 +38,7 @@ CSRF_TRUSTED_ORIGINS = [
 ]
 
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['https://computifybmi-production.up.railway.app/']
 
 
 

@@ -34,11 +34,11 @@ DEBUG = False
 
 
 CSRF_TRUSTED_ORIGINS = [
-    'https://computifybmi-production.up.railway.app'
+    'computifybmi-production.up.railway.app'
 ]
 
 
-ALLOWED_HOSTS = ["https://computifybmi-production.up.railway.app/"]
+ALLOWED_HOSTS = ["computifybmi-production.up.railway.app"]
 
 
 

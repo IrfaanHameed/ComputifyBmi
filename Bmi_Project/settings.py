@@ -30,7 +30,12 @@ SECRET_KEY = get_random_secret_key()
 #print("SECRET KEY : ",SECRET_KEY)
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
+
+
+CSRF_TRUSTED_ORIGINS = [
+    'https://computifybmi-production.up.railway.app'
+]
 
 
 ALLOWED_HOSTS = ['*']
@@ -96,6 +101,10 @@ DATABASES = {
         'PORT':os.environ.get('PORT'),
     }
 }
+
+
+
+
 
 
 

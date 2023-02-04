@@ -33,12 +33,10 @@ SECRET_KEY = get_random_secret_key()
 DEBUG = False
 
 
-CSRF_TRUSTED_ORIGINS = [
-    'computifybmi-production.up.railway.app'
-]
 
 
-ALLOWED_HOSTS = ["computifybmi-production.up.railway.app"]
+
+ALLOWED_HOSTS = ["*"]
 
 
 

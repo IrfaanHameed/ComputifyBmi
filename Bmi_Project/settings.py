@@ -89,16 +89,15 @@ WSGI_APPLICATION = 'Bmi_Project.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
+import dj_database_url
+
+DATABASE_URL = os.getenv("DATABASE_URL")
+
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME':os.environ.get('NAME'),
-        'USER':os.environ.get('USER'),
-        'HOST':os.environ.get('HOST'),
-        'PASSWORD':os.environ.get('PASSWORD'),
-        'PORT':os.environ.get('PORT'),
-    }
+    "default": dj_database_url.config(default=DATABASE_URL, conn_max_age=1800),
 }
+
+
 
 
 

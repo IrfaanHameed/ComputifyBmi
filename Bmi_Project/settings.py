@@ -33,7 +33,7 @@ SECRET_KEY = get_random_secret_key()
 DEBUG = True
 
 if not DEBUG:
-          CSRF_TRUSTED_ORIGINS = ["https://computifybmi-production.up.railway.app/"]
+          CSRF_TRUSTED_ORIGINS = ["https://computifybmi-production.up.railway.app/check-bmi"]
 ALLOWED_HOSTS = ['*']
 
 

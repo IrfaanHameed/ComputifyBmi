@@ -9,29 +9,23 @@
     <link href="{% static 'css/style.css' %}" rel="stylesheet" type="text/css"/>
 </head>
 <body>
-          {% include "navbar.html" %}<br/><br/>
+          {% include "navbar.html" %}<br/>
 
-       
-     
-          
-          <div class="bmi-container">
-            
-               <div style="background-color: rgb(212, 219, 219);">
-                    <h4 class="bmi-ques"> What is Body Mass Index (BMI) ???</h4>
-                     <p class="bmi-ans">Body mass index (BMI) is a value derived from the mass (weight) and height of a person. The BMI is defined as the body mass divided by the square of the body height, and is expressed in units of kg/m2, resulting from mass in kilograms and height in metres.</p> 
-                </div>
-                <img class="bmi-image" src="https://api.parashospitals.com/uploads/2017/10/BMI.png"/>
-               <br/>
-                {% include "tables.html" %}
+          <div style="display:flex;align-items: center;flex-direction: column;justify-content: center;margin-left: auto;margin-right: auto;margin-top: 50px;;">
+    
+               <h2 style="color: black;font-weight: 600;margin-top: 150px;font-size: 35px;">Welcome to <span style="color: rgba(5, 126, 118, 0.918);font-weight: 600;">ComputifyBMI</span></h2>
+               <span >Want to Know about BMI ??? <a style="text-decoration: none;" href="{% url 'about' %}">Click here to know more about BMI.</a></span>
+
+
+               <a  href="{% url 'check_bmi' %}" style="margin-top: 20px;" class="check-bmi-btn   outline" >check your bmi  </a>
                
-                
-                
-              
+          </div>
+          
+          
+          
 
-              <div class="btn-container">
-                  <a href="{% url 'check_bmi' %}" class="check-bmi-btn outline" >CHECK YOUR BMI  --> </a>
-             </div>
 
+          
         </div>
 
 

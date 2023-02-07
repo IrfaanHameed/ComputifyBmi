@@ -31,45 +31,47 @@ def result(request):
       moderate_risk_count = 0
       high_risk_count = 0
       low_risk_count=0
-      genders = []
-      for customer in customers:
-         genders.append(customer.gender)
-         male_count = genders.count('M')
-         female_count = genders.count('F')
-         total = male_count + female_count
+    
+    
+      total = customers.count()
 
-         bmi = customer.get_bmi
-         customer_id = customer
-         height = customer.height
-         weight = customer.weight
-         if bmi < 18.5:
+      bmi = customer.get_bmi
+      customer_id = customer
+      height = customer.height
+      weight = customer.weight
+      if bmi < 18.5:
              message = "Under Weight"
              underweight_count+=1
              color = "light green "
-         elif bmi >= 18.5 and bmi <= 24.9:
+      elif bmi >= 18.5 and bmi <= 24.9:
                message = "Normal  Weight"
                NormalWeight_count+=1
                color = "green"
-         elif bmi >= 25 and bmi <= 29.9:
+      elif bmi >= 25 and bmi <= 29.9:
                message = "Pre-Obesity"
                pre_obesity_count+=1
                color = "orange"
-         elif bmi >= 30 and bmi <= 34.9:
+      elif bmi >= 30 and bmi <= 34.9:
                message = "Low Risk Obesity"
                low_risk_count+=1
                color = "dark orange"
-         elif bmi >= 35 and bmi <= 39.9:
+      elif bmi >= 35 and bmi <= 39.9:
                message = "Moderate Risk Obesity"
                moderate_risk_count+=1
                color = "red"
-         elif bmi >= 40:
+      elif bmi >= 40:
                message = "High Risk Obesity"
                high_risk_count+=1
                color = "dark red" 
-      frontend_stuff = {"bmi":bmi,"message":message,"total":total,"M":male_count,"F":female_count,"highobesity":high_risk_count,
+      frontend_stuff = {"bmi":bmi,"message":message,"total":total,"highobesity":high_risk_count,
       "lowobesity":low_risk_count,"moderateobesity":moderate_risk_count,"normal":NormalWeight_count,
       "underweight":underweight_count,"preobesity":pre_obesity_count,}
       return render(request,"result.html",frontend_stuff)
+
+
+def about(request):
+      frontend_stuff={}
+      return render(request,"aboutBmi.html",frontend_stuff)
 
 
 

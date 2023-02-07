@@ -11,8 +11,8 @@ class Customer(models.Model):
     name =  models.CharField(max_length=200,null=True)
     age = models.IntegerField()
     gender = models.CharField(max_length=200,choices=Gender)
-    height = models.IntegerField()
-    weight = models.IntegerField()
+    height = models.FloatField()
+    weight = models.FloatField()
 
 
     @property
